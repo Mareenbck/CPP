@@ -1,15 +1,19 @@
 #ifndef PHONEBOOK_CLASS_H
 # define PHONEBOOK_CLASS_H
 
-class PhoneBook {
-
+class PhoneBook
+{
 	public:
+		PhoneBook(void);
+		~PhoneBook(void);
+		void addContact();
+		void searchContact();
+		void print_contact();
+		Contact get_contact(int i) const;
 
-	Contact contact[8];
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
+	private:
+		Contact _book[8];
+		int _index;
 };
 
 #endif
