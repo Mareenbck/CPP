@@ -3,14 +3,14 @@
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
 
-Contact::Contact(void){
-
+Contact::Contact(void)
+{
 	std::cout << "Contact created" << std::endl;
 	return ;
 }
 
-Contact::~Contact(void){
-
+Contact::~Contact(void)
+{
 	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
@@ -39,7 +39,6 @@ std::string	Contact::get_darkSecret(void)
 {
 	return (this->_darkSecret);
 }
-
 
 std::string Contact::input(std::string str)
 {

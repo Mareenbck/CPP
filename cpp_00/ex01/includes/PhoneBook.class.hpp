@@ -8,8 +8,9 @@ class PhoneBook
 		~PhoneBook(void);
 		void addContact();
 		void searchContact();
-		void print_contact();
-		Contact get_contact(int i) const;
+		void print_all_contact();
+		void print_one_contact(Contact contact);
+		// Contact get_contact(int i) const;
 
 	private:
 		Contact _book[8];
