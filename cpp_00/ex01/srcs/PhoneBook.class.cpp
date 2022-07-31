@@ -2,23 +2,16 @@
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook(void){
-
-	std::cout << "PhoneBook created" << std::endl;
+PhoneBook::PhoneBook(void)
+{
 	this->_index = 0;
 	return ;
 }
 
-PhoneBook::~PhoneBook(void){
-
-	std::cout << "Destructor called" << std::endl;
+PhoneBook::~PhoneBook(void)
+{
 	return ;
 }
-
-// Contact PhoneBook::get_contact(int index) const
-// {
-// 	return (this->_book[index]);
-// }
 
 void PhoneBook::addContact(void)
 {

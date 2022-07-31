@@ -5,13 +5,11 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact created" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -50,7 +48,7 @@ std::string Contact::input(std::string str)
 		if (std::getline(std::cin, tmp).eof())
 			exit(0);
 		if (tmp.empty())
-			std::cout << "Can't be empty" << std::endl;
+			std::cout << "\033[1;31m Can't be empty\033[0m" << std::endl;
 	}
 	return (tmp);
 }
