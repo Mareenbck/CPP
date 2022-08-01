@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/01 09:39:37 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/08/01 09:50:11 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include <iostream>
 # include <iomanip>
 # include <limits>
@@ -26,8 +38,8 @@ int main()
 			phonebook.searchContact();
 		else if (!input.compare("EXIT") || !input.compare("exit") || !input.compare("3"))
 			break ;
-		else
-			std::cout << "\033[1;31m >>> Wrong input\033[0m:" << std::endl;
+		// else
+		// 	std::cout << "\033[1;31m >>> Wrong input\033[0m:" << std::endl;
 	}
 	return 0;
 }

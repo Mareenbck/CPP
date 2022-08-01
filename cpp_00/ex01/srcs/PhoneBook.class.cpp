@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/01 09:39:43 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/08/01 09:54:50 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
+#include <stdlib.h>
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
 
@@ -16,7 +29,7 @@ PhoneBook::~PhoneBook(void)
 void PhoneBook::addContact(void)
 {
 	if (_index > 7)
-		std::cout << "Phonebook is full" << std::endl;
+		std::cout << "\033[0;31m>>> PhoneBook is full\033[0m" << std::endl;
 	else
 		this->_book[_index++].set_contact();
 	return;
@@ -73,6 +86,11 @@ void PhoneBook::searchContact(void)
 {
 	std::string input;
 
+	if (this->_book[0].get_firstname().empty())
+	{
+		std::cout << "\033[0;31m>>> PhoneBook is empty\033[0m" << std::endl;
+		return ;
+	}
 	print_all_contact();
 	while (1)
 	{
