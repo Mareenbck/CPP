@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:39:43 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/01 09:54:50 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/01 15:59:19 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ PhoneBook::~PhoneBook(void)
 void PhoneBook::addContact(void)
 {
 	if (_index > 7)
-		std::cout << "\033[0;31m>>> PhoneBook is full\033[0m" << std::endl;
+		_index = 0;
 	else
 		this->_book[_index++].set_contact();
 	return;

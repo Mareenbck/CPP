@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:39:37 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/01 09:50:11 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/01 16:07:05 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ int main()
 		std::cout << "*-----------------*" << std::endl;
 		std::cout << "\033[1;33mSelect an action ? \033[0m:"<< "\n\033[0;35mAction \033[0m: ";
 		std::getline(std::cin, input);
-		if (!input.compare("ADD") || !input.compare("add") || !input.compare("1"))
+		if (!input.compare("ADD"))
 			phonebook.addContact();
-		else if (!input.compare("SEARCH") || !input.compare("search") || !input.compare("2"))
+		else if (!input.compare("SEARCH"))
 			phonebook.searchContact();
-		else if (!input.compare("EXIT") || !input.compare("exit") || !input.compare("3"))
+		else if (!input.compare("EXIT"))
 			break ;
-		// else
-		// 	std::cout << "\033[1;31m >>> Wrong input\033[0m:" << std::endl;
 	}
 	return 0;
 }

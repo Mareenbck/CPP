@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:39:48 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/01 09:39:49 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/01 16:06:02 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class Contact
 		std::string get_nickname(void);
 		std::string get_phoneNumber(void);
 		std::string get_darkSecret(void);
-		// void displayInfo()
-		//std::string getName(int nb)
 
 	private:
 		std::string _firstname;

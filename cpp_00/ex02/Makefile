@@ -1,5 +1,5 @@
 NAME	=	globalBanksters
-SRCS	=	srcs/test.cpp srcs/Account.cpp
+SRCS	=	srcs/tests.cpp srcs/Account.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
