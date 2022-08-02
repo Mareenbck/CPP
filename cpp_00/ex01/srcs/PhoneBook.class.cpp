@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:39:43 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/01 15:59:19 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:17:33 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void PhoneBook::searchContact(void)
 			exit(0);
 		if (input[0] == 'Q')
 			break ;
-		else if (input[0] >= '8' || this->_book[input[0] - '0'].get_firstname().empty())
+		else if (input[0] >= '8' || input[0] <= '0' || this->_book[input[0] - '0'].get_firstname().empty())
 			std::cout << "\033[1;31m>>> Wrong input\033[0m:" << std::endl;
 		else
 		{
