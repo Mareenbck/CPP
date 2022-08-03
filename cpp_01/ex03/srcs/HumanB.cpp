@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:05:49 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/02 18:12:58 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/03 15:16:45 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void HumanB::attack(void)
 	}
 	else
 	{
-		std::cout << this->_name << " has no weapon "
-					<< std::endl;
+		std::cout << this->_name << " has no weapon "<< std::endl;
 	}
 }
 

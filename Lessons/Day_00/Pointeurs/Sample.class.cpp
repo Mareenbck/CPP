@@ -13,7 +13,7 @@ Sample::~Sample(void){
 	return ;
 }
 
-void Sample::bar(void){
+void Sample::bar(void) const{
 
 	std::cout << "member function called" << std::endl;
 	return;

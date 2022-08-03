@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 12:25:31 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/03 15:05:50 by mbascuna         ###   ########.fr       */
+/*   Created: 2022/08/03 13:06:25 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/08/03 14:10:30 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(void)
+# include <iostream>
+# include <iomanip>
+# include <string>
+
+class Harl
 {
-	Zombie *horde = zombieHorde(5, "Contrevent");
 
-	delete [] horde;
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 
-	return (0);
-}
+	public:
+		Harl(void);
+		~Harl(void);
+		void complain(std::string level);
+};
+
+#endif
