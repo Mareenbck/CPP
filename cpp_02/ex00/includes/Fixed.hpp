@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/01 11:00:31 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/01 11:36:39 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -15,8 +27,8 @@ class Fixed
 		void setRawBits(int const raw);
 
 	private:
-		int _fixed;
-		static int const _fix;
+		int _n;
+		static int const _bits = 8;
 };
 
 #endif
