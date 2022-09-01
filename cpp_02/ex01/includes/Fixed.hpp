@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -19,8 +20,8 @@ public:
 	int toInt(void) const;
 
 private:
-	int _fixed;
-	static int const _fix;
+	int _n;
+	static int const _bits = 8;
 };
 
 std::ostream &operator<<(std::ostream &o, Fixed const &rhs);
