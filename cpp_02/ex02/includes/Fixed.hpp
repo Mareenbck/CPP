@@ -28,10 +28,11 @@ public:
 	Fixed &operator++(void);
 	Fixed operator++(int);
 	Fixed &operator--(void);
+	Fixed operator--(int);
 
 	static Fixed &min(Fixed &a, Fixed &b);
-	static const Fixed &min(Fixed const &a, Fixed const &b);
 	static Fixed &max(Fixed &a, Fixed &b);
+	static const Fixed &min(Fixed const &a, Fixed const &b);
 	static const Fixed &max(Fixed const &a, Fixed const &b);
 
 	int getRawBits(void) const;
