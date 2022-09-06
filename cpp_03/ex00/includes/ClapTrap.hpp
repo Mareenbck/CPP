@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 10:57:08 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/06 12:52:32 by mbascuna         ###   ########.fr       */
+/*   Created: 2022/09/06 12:51:52 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/06 12:57:47 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
-# include <cmath>
 
-class Fixed
+class ClapTrap
 {
 	public:
-		Fixed(void);
-		Fixed(int const i);
-		Fixed(float const f);
-		Fixed(Fixed const &src);
-		Fixed &operator=(Fixed const &rhs);
-		~Fixed(void);
+		ClapTrap(void);
+		ClapTrap(ClapTrap const &src);
+		ClapTrap &operator=(ClapTrap const &rhs);
+		~ClapTrap(void);
 
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-		float toFloat(void) const;
-		int toInt(void) const;
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 	private:
-		int _n;
-		static int const _bits = 8;
-};
-
-std::ostream &operator<<(std::ostream &o, Fixed const &rhs);
+		std::string const _name;
+		int _hit;
+		int _energy;
+		int _attack;
+}
 
 #endif
