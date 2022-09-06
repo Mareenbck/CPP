@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/06 10:57:32 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/06 10:57:33 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef POINT_HPP
 # define POINT_HPP
 
@@ -15,8 +27,8 @@ class Point
 		Point &operator=(Point const &point);
 		~Point(void);
 
-		Fixed getX(void) const;
-		Fixed getY(void) const;
+		Fixed const &getX(void) const;
+		Fixed const &getY(void) const;
 
 	private :
 		Fixed const _x;

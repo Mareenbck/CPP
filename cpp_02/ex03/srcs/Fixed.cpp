@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/06 10:57:42 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/06 10:57:42 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : _n(0)
@@ -29,7 +41,7 @@ Fixed::~Fixed(void)
 
 Fixed &Fixed::operator=(Fixed const &rhs)
 {
-	setRawBits(rhs.getRawBits());
+	this->setRawBits(rhs.getRawBits());
 	return (*this);
 }
 
@@ -88,6 +100,7 @@ Fixed Fixed::operator/(Fixed const &rhs) const
 }
 
 /*.......Operateurs incrementations.......*/
+
 Fixed &Fixed::operator++(void)
 {
 	this->_n += 1;

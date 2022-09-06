@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/06 10:57:47 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/06 10:57:48 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include "Point.hpp"
 
@@ -18,6 +30,7 @@ Point::Point(Fixed const x, Fixed const y) : _x(x), _y(y)
 
 Point::Point(Point const &src) : _x(src.getX()), _y(src.getY())
 {
+	return;
 }
 
 Point::~Point(void)
@@ -25,33 +38,19 @@ Point::~Point(void)
 	return;
 }
 
-Point &Point::operator=(const Point &point)
+Point &Point::operator=(Point const &point)
 {
-	std::cout << "operator= " << std::endl;
-	Point tmp(point);
-	tmp(*this);
-		// (void)point;
-		// Fixed fx = point.getX();
-		// Fixed fy = point.getY();
-		this->_x = point.getX();
-	// this->_y = point.getY();
-	// (fx, fy);
-	// // this = Point(fx, fy);
-	// this->_x.setRawBits(fx.getRawBits());
-	// this->_y.setRawBits(fy.getRawBits());
-	// // this->_y = fy.toFloat();
-	// // this->_x = fx.toFloat();
-	// std::cout << "operator= fx" << fx.toFloat() << std::endl;
-	// std::cout << "operator= this" << this->_x << std::endl;
+	(void)point;
 	return *this;
 }
 
-Fixed Point::getX(void) const
+Fixed const &Point::getX(void) const
 {
 	return this->_x;
 }
 
-Fixed Point::getY(void) const
+Fixed const &Point::getY(void) const
 {
 	return this->_y;
 }
+
