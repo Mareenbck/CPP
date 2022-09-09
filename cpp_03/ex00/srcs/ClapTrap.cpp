@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:03:33 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/07 16:16:48 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/09 11:24:52 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hitPoints <= 0)
 	{
-		std::cout << "⛔️ " <<this->get_name() << " cannot be repaired, he is alreday dead\n";
+		std::cout << "⛔️ " << this->get_name() << " cannot be repaired, he is alreday dead\n";
 		return ;
 	}
 	std::cout << "💉 " << this->get_name() << " be repaired with " << amount << " points";
