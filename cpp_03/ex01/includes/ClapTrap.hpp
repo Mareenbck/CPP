@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:51:52 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 13:10:50 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/09 12:08:31 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ class ClapTrap
 
 	private:
 		std::string _name;
+
+	protected:
 		int _hitPoints;
 		int _attackDamage;
 		int _energyPoints;

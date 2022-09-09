@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 12:51:52 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 13:10:50 by mbascuna         ###   ########.fr       */
+/*   Created: 2022/09/09 11:59:08 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/09 13:22:32 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : public ClapTrap
 {
 	public:
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap const &src);
-		ClapTrap &operator=(ClapTrap const &rhs);
-		~ClapTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap &operator=(ScavTrap const &rhs);
+		~ScavTrap(void);
 
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-
-		const std::string	get_name(void) const;
-		int get_hitPoints(void) const;
-		int	get_energyPoints(void) const;
-		int	get_attackDamage(void) const;
+		void guardGate(void);
 
 	private:
 		std::string _name;
-		int _hitPoints;
-		int _attackDamage;
-		int _energyPoints;
+
+
 };
 
 #endif
