@@ -6,11 +6,17 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:03:33 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 11:24:52 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/09 15:05:11 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "👏 Constructor : \033[0;34mHello ClapTrap\033[0m" << std::endl;
+	return;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {

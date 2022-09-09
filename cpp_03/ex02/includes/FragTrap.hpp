@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:05:16 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 14:15:47 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/09 15:32:54 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@
 class FragTrap : public ClapTrap
 {
 	public:
+		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap const &src);
 		FragTrap &operator=(FragTrap const &rhs);
 		~FragTrap(void);
 
 		void highFivesGuys(void);
-
-	private:
-		std::string _name;
 
 };
 

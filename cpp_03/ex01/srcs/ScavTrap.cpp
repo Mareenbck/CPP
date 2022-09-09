@@ -6,11 +6,17 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:11:27 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 13:42:01 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/09 15:08:20 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void) : ClapTrap()
+{
+	std::cout << "👏 Constructor : \033[0;34mHello ScavTrap\033[0m" << std::endl;
+	return;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {

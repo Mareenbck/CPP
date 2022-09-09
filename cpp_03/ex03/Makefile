@@ -1,5 +1,5 @@
-NAME	=	ClapTrap
-SRCS	=	main.cpp ClapTrap.cpp
+NAME	=	ScavTrap
+SRCS	=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
 DEPENDS = 	$(OBJS:.o=.d)
 CXX		=	c++
@@ -20,7 +20,7 @@ ${NAME}:	${OBJS}
 -include $(DEPENDS)
 
 clean:
-	rm -rf ${OBJDIR} $(DEPENDS)
+	rm -rf ${OBJDIR}
 
 fclean: clean
 	rm -f ${NAME}
