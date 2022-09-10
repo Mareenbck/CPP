@@ -13,6 +13,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
@@ -63,6 +64,24 @@ int main(void)
 	std::cout << Clap_Emma.get_name() << ": Hits: " << Clap_Emma.get_hitPoints() << " | Energy: " << Clap_Emma.get_energyPoints() << " | Attack: " << Clap_Emma.get_attackDamage() << std::endl;
 	std::cout << Scav_Mehdi.get_name() << ": Hits: " << Scav_Mehdi.get_hitPoints() << " | Energy: " << Scav_Mehdi.get_energyPoints() << " | Attack: " << Scav_Mehdi.get_attackDamage() << std::endl;
 	std::cout << Frag_Jeanne.get_name() << ": Hits: " << Frag_Jeanne.get_hitPoints() << " | Energy: " << Frag_Jeanne.get_energyPoints() << " | Attack: " << Frag_Jeanne.get_attackDamage() << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "CONSTRUCTOR" << std::endl;
+	DiamondTrap a("Chloe");
+	DiamondTrap b;
+	DiamondTrap c(a);
+
+	std::cout << std::endl;
+	a.whoAmI();
+	b.whoAmI();
+	c.whoAmI();
+
+	std::cout << std::endl;
+	a.attack("Mehdi");
+	a.guardGate();
+	a.highFivesGuys();
+	a.beRepaired(10);
+	a.takeDamage(5);
 	std::cout << std::endl;
 
 	return 0;

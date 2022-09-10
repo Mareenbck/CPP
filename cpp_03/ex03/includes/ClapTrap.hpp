@@ -28,7 +28,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		const std::string	get_name(void) const;
+		std::string	get_name(void) const;
 		int get_hitPoints(void) const;
 		int	get_energyPoints(void) const;
 		int	get_attackDamage(void) const;

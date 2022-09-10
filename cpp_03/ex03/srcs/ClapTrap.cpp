@@ -12,7 +12,7 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("generic"), _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {
 	std::cout << "👏 Constructor : \033[0;34mHello ClapTrap\033[0m" << std::endl;
 	return;
@@ -46,7 +46,7 @@ ClapTrap::~ClapTrap(void)
 	return;
 }
 
-const std::string	ClapTrap::get_name(void) const
+std::string	ClapTrap::get_name(void) const
 {
 	return (this->_name);
 }
@@ -86,7 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "⛔️ " << this->get_name() << " cannot be repaired, he is alreday dead\n";
 		return ;
 	}
-	std::cout << "💉 " << this->get_name() << " be repaired with " << amount << " points";
+	std::cout << "💉 Clap " << this->get_name() << " be repaired with " << amount << " points";
 	this->_hitPoints += amount;
 	this->_energyPoints--;
 	std::cout << " | Hit points are now equal to : " << this->get_hitPoints();
