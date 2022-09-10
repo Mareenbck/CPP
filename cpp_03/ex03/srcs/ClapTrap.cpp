@@ -12,7 +12,7 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("generic"), _hitPoints(10), _attackDamage(0), _energyPoints(10)
+ClapTrap::ClapTrap(void) : _name("default"), _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {
 	std::cout << "👏 Constructor : \033[0;34mHello ClapTrap\033[0m" << std::endl;
 	return;
