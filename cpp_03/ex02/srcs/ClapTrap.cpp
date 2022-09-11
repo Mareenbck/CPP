@@ -46,7 +46,7 @@ ClapTrap::~ClapTrap(void)
 	return;
 }
 
-const std::string	ClapTrap::get_name(void) const
+std::string	ClapTrap::get_name(void) const
 {
 	return (this->_name);
 }
