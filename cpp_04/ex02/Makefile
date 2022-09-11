@@ -1,5 +1,5 @@
-NAME	=	Brain
-SRCS	=	Dog.cpp Cat.cpp Animal.cpp Brain.cpp main.cpp
+NAME	=	Abstract
+SRCS	=	Dog.cpp Cat.cpp AAnimal.cpp Brain.cpp main.cpp
 OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
 DEPENDS = 	$(OBJS:.o=.d)
 CXX		=	c++
