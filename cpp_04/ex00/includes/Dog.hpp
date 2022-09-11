@@ -8,7 +8,6 @@ class Dog : public Animal
 {
 	public:
 		Dog(void);
-		Dog(std::string name);
 		Dog(Dog const &src);
 		~Dog(void);
 
