@@ -1,0 +1,30 @@
+NAME	=	Polymorphisme
+SRCS	=	Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
+DEPENDS = 	$(OBJS:.o=.d)
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+HEADER 	=	includes
+SRCDIR	= 	srcs/
+OBJDIR	= 	objs/
+
+all:		${NAME}
+
+$(OBJDIR)%.o:	$(SRCDIR)%.cpp
+	@mkdir -p $(OBJDIR)
+	${CXX} ${CXXFLAGS} -I${HEADER} -MMD -MP -c $< -o $@
+
+${NAME}:	${OBJS}
+	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+
+-include $(DEPENDS)
+
+clean:
+	rm -rf ${OBJDIR}
+
+fclean: clean
+	rm -f ${NAME}
+
+re : fclean all
+
+.PHONY: all fclean clean re
