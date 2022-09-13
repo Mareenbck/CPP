@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:11:27 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 15:08:20 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:46:01 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,7 @@ ScavTrap::~ScavTrap(void)
 	return;
 }
 
-void ScavTrap::guardGate() {
-	std::cout << "\033[0;33m🏦 ScavTrap " << this->get_name() << " have entered in Gate keeper mode.\033[0m" << std::endl;
-}
-
-void ScavTrap::attack(const std::string& target)
+void ScavTrap::guardGate()
 {
-	if (this->_hitPoints <= 0)
-	{
-		std::cout << this->get_name() << " cannot attack because he's dead\n";
-		return ;
-	}
-	std::cout << "🪃  ScavTrap " << this->get_name() << " attacks " << target << " , causing " ;
-	std::cout << this->get_attackDamage() << " points of damage!" << std::endl;
-	this->_energyPoints--;
-
+	std::cout << "\033[0;33m🏦 ScavTrap " << this->get_name() << " have entered in Gate keeper mode.\033[0m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:03:33 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 15:06:33 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:44:36 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ int	ClapTrap::get_attackDamage(void) const
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (this->_hitPoints <= 0)
+	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
 	{
 		std::cout << this->get_name() << " cannot attack because he's dead\n";
 		return ;
 	}
-	std::cout << "🪃  ClapTrap " << this->get_name() << " attacks " << target << " , causing " ;
+	std::cout << "🪃 " << this->get_name() << " attacks " << target << " , causing " ;
 	std::cout << this->get_attackDamage() << " points of damage!" << std::endl;
 	this->_energyPoints--;
 
@@ -81,12 +81,12 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hitPoints <= 0)
+	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
 	{
 		std::cout << "⛔️ " << this->get_name() << " cannot be repaired, he is alreday dead\n";
 		return ;
 	}
-	std::cout << "💉 " << this->get_name() << " be repaired with " << amount << " points";
+	std::cout << "💉 Clap " << this->get_name() << " be repaired with " << amount << " points";
 	this->_hitPoints += amount;
 	this->_energyPoints--;
 	std::cout << " | Hit points are now equal to : " << this->get_hitPoints();
