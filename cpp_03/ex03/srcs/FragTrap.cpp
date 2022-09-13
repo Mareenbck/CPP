@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:07:02 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 15:09:08 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:01:48 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ FragTrap::~FragTrap(void)
 	return;
 }
 
-void FragTrap::highFivesGuys(void) {
+void FragTrap::highFivesGuys(void)
+{
 	std::cout << "\033[0;32m🖐  FragTrap " << this->get_name() << " wants a High Five !!!\033[0m" << std::endl;
 }
 
+int FragTrap::get_hitPoints(void) const
+{
+	return (this->_hitPoints);
+}

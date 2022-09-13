@@ -6,24 +6,24 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:34:57 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 16:07:30 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:33:33 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap("generic_clap_name"), _name("generic")
+DiamondTrap::DiamondTrap(void) : ClapTrap("generic_clap_name"), FragTrap("generic"), ScavTrap("generic"), _name("generic")
 {
 	std::cout << "👏 Constructor : \033[0;34mHello DiamondTrap\033[0m" << std::endl;
 	return;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
 	std::cout << "👏 Constructor : \033[0;34mHello DiamondTrap(" << name << ")\033[0m" << std::endl;
-	this->_hitPoints = FragTrap::get_hitPoints();
-	this->_energyPoints = ScavTrap::get_energyPoints();
-	this->_attackDamage = FragTrap::get_attackDamage();
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	return;
 }
 

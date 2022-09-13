@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:05:16 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 15:33:10 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:55:47 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ class FragTrap : public virtual ClapTrap
 		~FragTrap(void);
 
 		void highFivesGuys(void);
+		int get_hitPoints(void) const;
+
+
+	protected:
+		int _hitpoints;
+		int _energyPoints;
+		int _attackDamage;
 
 };
 

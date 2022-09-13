@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 14:03:22 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 14:25:05 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:32:46 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ int main(void)
 
 	std::cout << "CONSTRUCTOR" << std::endl;
 	DiamondTrap a("Chloe");
+	std::cout << "Hits points " << a.get_hitPoints() <<std::endl;
+	std::cout << "Attack Damage " << a.get_attackDamage() <<std::endl;
+	std::cout << "Energy points " << a.get_energyPoints() <<std::endl;
+
 	DiamondTrap b;
 	DiamondTrap c(a);
 
