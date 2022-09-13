@@ -22,13 +22,8 @@ Character::Character(Character const &src) : ICharacter()
 {
 	this->_name = src.getName() + "_copy";
 	for (int i = 0; i < 4; i++)
-		delete this->_items[i];
-	for (int i = 0; i < 4; i++)
-	{
-		// Deep copy!
-		if (src._items[i])
-			this->_items[i] = src._items[i]->clone();
-	}
+		this->_items[i] = NULL;
+	*this = src;
 	std::cout << "Copy constructor :\033[0;34m " << this->_name << "\033[0m" << std::endl;
 }
 
@@ -36,22 +31,24 @@ Character::~Character(void)
 {
 	std::cout << "Destructor :\033[0;35m " << this->_name << "\033[0m" << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete this->_items[i];
+	{
+		if (this->_items[i] != NULL)
+			delete this->_items[i];
+	}
 	return;
 }
 
 Character &Character::operator=(Character const &rhs)
 {
 	this->_name = rhs.getName() + "_copy";
-	for (int i = 0; i < 4; i++)
-		delete this->_items[i];
+
 	for (int i = 0; i < 4; i++)
 	{
 		// Deep copy!
 		if (rhs._items[i])
 			this->_items[i] = rhs._items[i]->clone();
-	}
 
+	}
 	return *this;
 }
 

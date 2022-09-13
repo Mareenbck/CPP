@@ -28,7 +28,6 @@ Cure &Cure::operator=(Cure const &rhs)
 
 AMateria *Cure::clone() const
 {
-	std::cout << " >> Cure::clone" << std::endl;
 	AMateria *clone = new Cure();
 	return (clone);
 }

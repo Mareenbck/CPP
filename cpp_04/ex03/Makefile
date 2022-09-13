@@ -3,7 +3,7 @@ SRCS	=	AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
 DEPENDS = 	$(OBJS:.o=.d)
 CXX		=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 HEADER 	=	includes
 SRCDIR	= 	srcs/
 OBJDIR	= 	objs/
