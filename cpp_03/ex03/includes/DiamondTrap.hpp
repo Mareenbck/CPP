@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:30:17 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/13 15:41:48 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:18:31 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap(void);
 
 		void whoAmI(void);
+		using ScavTrap::attack;
 		std::string getName(void) const;
 
 	private:

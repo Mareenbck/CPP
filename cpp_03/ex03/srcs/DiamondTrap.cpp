@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:34:57 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/13 15:43:23 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:19:44 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src), FragTrap(src),
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const &rhs)
 {
-	this->_name = rhs.get_name();
+	this->_name = rhs._name + "_copy";
 	ClapTrap::_name = this->_name;
 	this->_hitPoints = rhs.get_hitPoints();
 	this->_attackDamage = rhs.get_attackDamage();

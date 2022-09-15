@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:03:33 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 12:06:26 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:08:41 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void ClapTrap::attack(const std::string& target)
 		std::cout << this->get_name() << " cannot attack because he's dead\n";
 		return ;
 	}
-	std::cout << "🔫 " << this->get_name() << " attacks " << target << " , causing " ;
+	std::cout << "🔫 ClapTrap " << this->get_name() << " attacks " << target << " , causing " ;
 	std::cout << this->get_attackDamage() << " points of damage!" << std::endl;
 	this->_energyPoints--;
 

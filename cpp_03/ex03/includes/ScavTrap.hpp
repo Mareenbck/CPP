@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:59:08 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/13 15:41:40 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:04:50 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public virtual ClapTrap
 		ScavTrap &operator=(ScavTrap const &rhs);
 		~ScavTrap(void);
 
+		void attack(const std::string& target);
 		void guardGate(void);
 
 };
