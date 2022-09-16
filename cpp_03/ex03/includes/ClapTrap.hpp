@@ -32,6 +32,9 @@ class ClapTrap
 		int get_hitPoints(void) const;
 		int	get_energyPoints(void) const;
 		int	get_attackDamage(void) const;
+		void setHitsPoints(int hp);
+		void setEnergyPoints(int ep);
+		void setAttackDamage(int ad);
 
 	private:
 

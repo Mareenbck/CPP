@@ -110,3 +110,18 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	}
 }
+
+void ClapTrap::setHitsPoints(int hp)
+{
+	this->_hitPoints = hp;
+}
+
+void ClapTrap::setEnergyPoints(int ep)
+{
+	this->_energyPoints = ep;
+}
+
+void ClapTrap::setAttackDamage(int ad)
+{
+	this->_attackDamage = ad;
+}

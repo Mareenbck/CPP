@@ -14,16 +14,19 @@
 
 DiamondTrap::DiamondTrap(void) : ClapTrap("generic_clap_name"), FragTrap("generic"), ScavTrap("generic"), _name("generic")
 {
-	std::cout << "👏 Constructor : \033[0;34mHello DiamondTrap\033[0m" << std::endl;
+	std::cout << "👏 Constructor : \033[0;34mHello DiamondTrap(generic)\033[0m" << std::endl;
+	setHitsPoints(FragTrap::_hitPoints);
+	setEnergyPoints(ScavTrap::_energyPoints);
+	setAttackDamage(FragTrap::_attackDamage);
 	return;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
 	std::cout << "👏 Constructor : \033[0;34mHello DiamondTrap(" << name << ")\033[0m" << std::endl;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	setHitsPoints(FragTrap::_hitPoints);
+	setEnergyPoints(ScavTrap::_energyPoints);
+	setAttackDamage(FragTrap::_attackDamage);
 	return;
 }
 
@@ -35,8 +38,8 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src), FragTrap(src),
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const &rhs)
 {
-	this->_name = rhs._name + "_copy";
-	ClapTrap::_name = this->_name;
+	this->_name = rhs._name;
+	// ClapTrap::_name = this->_name;
 	this->_hitPoints = rhs.get_hitPoints();
 	this->_attackDamage = rhs.get_attackDamage();
 	this->_energyPoints = rhs.get_energyPoints();
@@ -51,6 +54,6 @@ void DiamondTrap::whoAmI(void)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "👽 Destructor DiamondTrap : \033[0;35mByebye (" << this->get_name() << ")\033[0m" << std::endl;
+	std::cout << "👽 Destructor DiamondTrap : \033[0;35mByebye (" << this->_name << ")\033[0m" << std::endl;
 	return;
 }

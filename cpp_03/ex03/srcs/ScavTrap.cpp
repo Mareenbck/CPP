@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "👏 Constructor : \033[0;34mHello ScavTrap(" << name << ")\033[0m" << std::endl;
+	std::cout << "👏 Constructor : \033[0;34mHello ScavTrap(" << _name << ")\033[0m" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -45,7 +45,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &rhs)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "👽 Destructor ScavTrap : \033[0;35mByebye (" << this->get_name() << ")\033[0m" << std::endl;
+	std::cout << "👽 Destructor ScavTrap : \033[0;35mByebye (" << this->_name << ")\033[0m" << std::endl;
 	return;
 }
 

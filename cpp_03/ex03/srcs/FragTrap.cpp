@@ -20,7 +20,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "👏 Constructor : \033[0;34mHello FragTrap(" << name << ")\033[0m" << std::endl;
+	std::cout << "👏 Constructor : \033[0;34mHello FragTrap(" << _name << ")\033[0m" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
