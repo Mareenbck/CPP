@@ -6,12 +6,11 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:32:45 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 15:46:44 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:25:26 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("generic"), _grade(150)
 {
