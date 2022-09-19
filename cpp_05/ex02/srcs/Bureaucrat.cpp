@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("generic"), _grade(150)
 {
@@ -71,6 +71,32 @@ void Bureaucrat::degrade(void)
 	this->_grade++;
 	if (this->_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (AForm::Exception &e)
+	{
+		std::cout << this->_name << " couldn't signed " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " sucesfully executed " << form.getName() << std::endl;
+	}
+	catch (AForm::Exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)

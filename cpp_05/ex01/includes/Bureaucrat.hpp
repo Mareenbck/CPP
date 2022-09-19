@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,6 +34,7 @@ class Bureaucrat
 
 		void promote(void);
 		void degrade(void);
+		void signForm(Form &form);
 
 		class Exception : public std::exception
 		{

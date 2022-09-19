@@ -11,21 +11,22 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-void constructorTests(void)
+void constructorFormTests(void)
 {
 	std::cout << std::endl;
 	std::cout << "------------------------------" << std::endl;
 	std::cout << std::endl;
-	std::cout << "\033[1m.CONSTRUCTORS.\033[0m" << std::endl;
-	Bureaucrat Emma;
-	Bureaucrat Vikto("Vitko", 2);
-	Bureaucrat Fanny(Vikto);
+	std::cout << "\033[1m.FORM CONSTRUCTORS.\033[0m" << std::endl;
+	Form a;
+	Form b("A315", 5, 10);
+	Form c(b);
 
 	std::cout << std::endl;
-	std::cout << Emma;
-	std::cout << Vikto;
-	std::cout << Fanny;
+	std::cout << a;
+	std::cout << b;
+	std::cout << c;
 	std::cout << std::endl;
 }
 
@@ -36,27 +37,14 @@ void validTests(void)
 	std::cout << std::endl;
 	std::cout << "\033[1m.VALID.\033[0m" << std::endl;
 	Bureaucrat Mehdi("Mehdi", 1);
+	Form a("A376", 5, 1);
 	std::cout << std::endl;
-	std::cout << "\033[0;32m*Degrade*\033[0m" << std::endl;
-	try
-	{
-		Mehdi.degrade();
-	}
-	catch (const Bureaucrat::Exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 	std::cout << Mehdi;
-	std::cout << "\033[0;32m*Promote*\033[0m" << std::endl;
-	try
-	{
-		Mehdi.promote();
-	}
-	catch (const Bureaucrat::Exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << Mehdi;
+	std::cout << a;
+	std::cout << std::endl;
+	std::cout << "\033[0;32m*Sign Form*\033[0m" << std::endl;
+	Mehdi.signForm(a);
+	std::cout << a;
 	std::cout << std::endl;
 }
 
@@ -69,22 +57,21 @@ void badGradeTests(void)
 	std::cout << "\033[0;32m*Grade 154*\033[0m" << std::endl;
 	try
 	{
-		Bureaucrat Emma("Emma", 154);
+		Form a("A456", 154, 3);
 	}
-	catch (const Bureaucrat::Exception &e)
+	catch (const Form::Exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "\033[0;32m*Grade -10*\033[0m" << std::endl;
 	try
 	{
-		Bureaucrat Dieu("Fanny", -10);
+		Form b("B897", 3, -10);
 	}
-	catch (const Bureaucrat::Exception &e)
+	catch (const Form::Exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 }
 
 void badIncrement(void)
@@ -92,36 +79,33 @@ void badIncrement(void)
 	std::cout << std::endl;
 	std::cout << "------------------------------" << std::endl;
 	std::cout << std::endl;
-	std::cout << "\033[1m.BAD INCREMENT.\033[0m" << std::endl;
-	Bureaucrat Fanny("Fanny", 1);
+	std::cout << "\033[1m.BAD SIGN FORMS.\033[0m" << std::endl;
+	Bureaucrat Fanny("Fanny", 15);
+	Form a("A376", 1, 1);
 	std::cout << Fanny;
-	std::cout << "\033[0;32m*Promote*\033[0m" << std::endl;
-	try
-	{
-		Fanny.promote();
-	}
-	catch (const Bureaucrat::Exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << a;
+	std::cout << "\033[0;32m*Sign KO*\033[0m" << std::endl;
+	Fanny.signForm(a);
+	std::cout << a;
 	std::cout << std::endl;
 	Bureaucrat Jeanne("Jeanne", 150);
 	std::cout << Jeanne;
-	std::cout << "\033[0;32m*Degrade*\033[0m" << std::endl;
-	try
-	{
-		Jeanne.degrade();
-	}
-	catch (const Bureaucrat::Exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << "\033[0;32m*Sign KO*\033[0m" << std::endl;
+	Jeanne.signForm(a);
+	std::cout << a;
+	std::cout << std::endl;
+	Form b("B265", 50, 50);
+	std::cout << b;
+	std::cout << "\033[0;32m*Sign OK*\033[0m" << std::endl;
+	Fanny.signForm(b);
+	std::cout << b;
 	std::cout << std::endl;
 }
 
 int main(void)
 {
-	constructorTests();
+	// constructorTests();
+	constructorFormTests();
 	validTests();
 	badGradeTests();
 	badIncrement();
