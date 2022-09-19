@@ -104,14 +104,17 @@ int character_tests()
 		Emma->use(0, *Vikto);
 		if (!src->createMateria("fire"))
 			std::cout << "Create FAIL" << std::endl;
-		Emma->equip(src->createMateria("cure"));
+		AMateria *tmp;
+		tmp = src->createMateria("ice");
+		Emma->equip(tmp);
 		Emma->unequip(1);
 		Emma->equip(src->createMateria("ice"));
 		Emma->equip(src->createMateria("cure"));
 		Emma->equip(src->createMateria("cure"));
-		Emma->equip(src->createMateria("cure"));
+		Emma->equip(tmp);
 		Emma->use(4, *Vikto);
 		Emma->use(-1, *Vikto);
+		delete tmp;
 		delete Emma;
 		delete Vikto;
 		delete src;
@@ -149,12 +152,12 @@ int deep_copy()
 
 int main()
 {
-	// materia_tests();
+	materia_tests();
 	std::cout << std::endl;
 	character_tests();
 	std::cout << std::endl;
-	// deep_copy();
+	deep_copy();
 	std::cout << std::endl;
-	// mandatory_tests();
+	mandatory_tests();
 	return 0;
 }

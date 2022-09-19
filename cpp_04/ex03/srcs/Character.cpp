@@ -32,7 +32,7 @@ Character::~Character(void)
 	std::cout << "Destructor :\033[0;35m " << this->_name << "\033[0m" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_items[i] != NULL)
+		if (this->_items[i])
 			delete this->_items[i];
 	}
 	return;
@@ -63,15 +63,17 @@ void Character::equip(AMateria *m)
 
 	if (!m)
 		return;
-	while (this->_items[i] && i < 4)
-		i++;
-	if (i >= 4)
+	for (i = 0; i < 4 && this->_items[i] != NULL; i++);
+	if (i == 4)
 	{
 		std::cout << this->_name << "'s equipment is full ! You can't equip more than 4 Materia" << std::endl;
-		return;
+		return ;
 	}
-	this->_items[i] = m;
-	std::cout << this->_name << " equipped materia " << m->getType() << " at position " << i << std::endl;
+	else
+	{
+		std::cout << this->_name << " equipped materia " << m->getType() << " at position " << i << std::endl;
+		this->_items[i] = m;
+	}
 }
 
 void Character::unequip(int idx)
