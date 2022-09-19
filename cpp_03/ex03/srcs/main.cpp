@@ -6,14 +6,14 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 14:03:22 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 12:21:42 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:52:14 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
 
 int main(void)
 {

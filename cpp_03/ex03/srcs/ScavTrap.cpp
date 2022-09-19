@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:11:27 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 12:17:48 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:25:34 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "👏 Constructor : \033[0;34mHello ScavTrap(" << name << ")\033[0m" << std::endl;
+	std::cout << "👏 Constructor : \033[0;34mHello ScavTrap(" << _name << ")\033[0m" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -45,7 +45,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &rhs)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "👽 Destructor ScavTrap : \033[0;35mByebye (" << this->get_name() << ")\033[0m" << std::endl;
+	std::cout << "👽 Destructor ScavTrap : \033[0;35mByebye (" << this->_name << ")\033[0m" << std::endl;
 	return;
 }
 

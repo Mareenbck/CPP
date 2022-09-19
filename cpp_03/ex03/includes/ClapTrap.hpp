@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:51:52 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 15:29:05 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:23:03 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class ClapTrap
 		int get_hitPoints(void) const;
 		int	get_energyPoints(void) const;
 		int	get_attackDamage(void) const;
+		void setHitsPoints(int hp);
+		void setEnergyPoints(int ep);
+		void setAttackDamage(int ad);
 
 	private:
 

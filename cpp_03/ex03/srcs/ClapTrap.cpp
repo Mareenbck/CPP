@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:03:33 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 12:17:40 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:23:26 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,19 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "   \033[31m" << this->get_name() << " is dead !!\033[0m" << std::endl;
 		return ;
 	}
+}
+
+void ClapTrap::setHitsPoints(int hp)
+{
+	this->_hitPoints = hp;
+}
+
+void ClapTrap::setEnergyPoints(int ep)
+{
+	this->_energyPoints = ep;
+}
+
+void ClapTrap::setAttackDamage(int ad)
+{
+	this->_attackDamage = ad;
 }
