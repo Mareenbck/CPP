@@ -6,7 +6,7 @@ Form::Form(void) : _name("generic"), _isSigned(false), _gradeToSign(150), _grade
 	return;
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	if (gradeToExecute > 150 || gradeToSign > 150)
 		throw Form::GradeTooLowException();

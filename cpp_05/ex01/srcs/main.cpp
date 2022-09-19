@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:30:31 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 15:37:10 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:30:38 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void badIncrement(void)
 
 int main(void)
 {
-	// constructorTests();
 	constructorFormTests();
 	validTests();
 	badGradeTests();
