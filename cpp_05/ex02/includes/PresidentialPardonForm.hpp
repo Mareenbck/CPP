@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 13:38:37 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/20 10:51:07 by mbascuna         ###   ########.fr       */
+/*   Created: 2022/09/20 10:54:54 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/20 10:58:01 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include "AForm.hpp"
-# include <iomanip>
-# include <fstream>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const &src);
-		~ShrubberyCreationForm(void);
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(PresidentialPardonForm const &src);
+		~PresidentialPardonForm(void);
 
-		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
 		std::string getTarget(void) const;
-
 		void execute(Bureaucrat const &executor) const;
 
 	private:

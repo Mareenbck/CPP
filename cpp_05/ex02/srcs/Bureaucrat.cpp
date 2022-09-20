@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:32:45 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 15:46:44 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:02:38 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Bureaucrat::Bureaucrat(void) : _name("generic"), _grade(150)
 {
-	std::cout << "Default Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
+	std::cout << "Bureaucrat Default Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
 	return;
 }
 
@@ -27,19 +27,19 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = grade;
-	std::cout << "Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
+	std::cout << "Bureaucrat Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
 		return;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src.getName()), _grade(src.getGrade())
 {
 	// *this = src;
-	std::cout << "Copy Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
+	std::cout << "Bureaucrat Copy Constructor :\033[0;34m " << this->_name << " - Grade : " << this->_grade << "\033[0m" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Destructor : \033[0;35m "<< this->_name <<" \033[0m" << std::endl;
+	std::cout << "Bureaucrat Destructor : \033[0;35m "<< this->_name <<" \033[0m" << std::endl;
 	return;
 }
 
@@ -91,7 +91,7 @@ void Bureaucrat::executeForm(AForm const &form)
 	try
 	{
 		form.execute(*this);
-		std::cout << this->_name << " sucesfully executed " << form.getName() << std::endl;
+		std::cout << this->_name << " succesfully executed " << form.getName() << std::endl;
 	}
 	catch (AForm::Exception &e)
 	{
@@ -112,10 +112,10 @@ const char *Bureaucrat::Exception::what() const throw()
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade Too High");
+	return ("Bureaucrat : Grade Too High");
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade Too Low");
+	return ("Bureaucrat : Grade Too Low");
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 13:38:34 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/20 09:14:04 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreation", 145, 137), _target("Default")
@@ -39,13 +51,34 @@ std::string ShrubberyCreationForm::getTarget(void) const
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	std::string	tree =
+	"\033[0;32m        a@@@@a        \n"
+	"    a@@@@@@@@@@@@a    \n"
+	"  a@@@@@@by@@@@@@@@a  \n"
+	"a@@@@@S@C@E@S@W@@@@@@a\n"
+	"@@@@@@@@@@@@@@@@@@@@@@\n"
+	" `@@@@@@`\\\\//'@@@@@@' \n"
+	"          ||          \n"
+	"          ||          \n"
+	"          ||          \n"
+	"          ||          \n"
+	"          ||          \n"
+	"         /MM\\        \033[0m\n"
+	"~~~~~~~~~~~~~~~~~~~~~~~~\n";
+	std::string	o = this->_target + "_shrubbery";
 	if (!this->getSign())
 		throw AForm::UnsignedFormException();
 	else if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	else
 	{
-		std::cout << "A COD" << std::endl;
+		std::ofstream	ofs(o.c_str());
+		if (!ofs.is_open())
+		{
+			std::cout << "Error creating outfile!" << std::endl;
+			return ;
+		}
+		ofs << tree;
 	}
 
 }

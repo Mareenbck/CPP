@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 13:38:37 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/20 10:51:07 by mbascuna         ###   ########.fr       */
+/*   Created: 2022/09/20 09:22:59 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/09/20 10:50:27 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
-# include <iomanip>
-# include <fstream>
+# include <cstdlib>
 
-class ShrubberyCreationForm : public AForm
+
+class RobotomyRequestForm : public AForm
 {
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const &src);
-		~ShrubberyCreationForm(void);
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const &src);
+		~RobotomyRequestForm(void);
 
-		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
 		std::string getTarget(void) const;
 

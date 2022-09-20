@@ -1,5 +1,5 @@
 NAME	=	Bureaucrat
-SRCS	=	Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRCS	=	Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
 OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
 DEPENDS = 	$(OBJS:.o=.d)
 CXX		=	c++

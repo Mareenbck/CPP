@@ -2,37 +2,35 @@
 
 AForm::AForm(void) : _name("generic"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
 {
-	std::cout << "Default Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
+	std::cout << "Form Default Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
 	return;
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	if (gradeToExecute > 150 || gradeToSign > 150)
 		throw AForm::GradeTooLowException();
 	else if (gradeToExecute < 1 || gradeToSign < 1)
 		throw AForm::GradeTooHighException();
-	std::cout << "Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
+	std::cout << "Form Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
 	return;
 }
 
 AForm::AForm(AForm const &src) : _name(src.getName()), _isSigned(src.getSign()) , _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute())
 {
 	*this = src;
-	std::cout << "Copy Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
+	std::cout << "Form Copy Constructor :\033[0;34m " << this->_name << " - Grade execute : " << this->_gradeToExecute << " - Grade sign : " << this->_gradeToSign << "\033[0m" << std::endl;
 }
 
 AForm::~AForm(void)
 {
-	std::cout << "Destructor : \033[0;35m " << this->_name << " \033[0m" << std::endl;
+	std::cout << "Form Destructor : \033[0;35m " << this->_name << " \033[0m" << std::endl;
 	return;
 }
 
 AForm &AForm::operator=(AForm const &rhs)
 {
 	this->_isSigned = rhs.getSign();
-	// this->_gradeToExecute = src.getGradeToExecute();
-	// this->_gradeToExecute = rhs.getGradeToSign();
 	return *this;
 }
 
@@ -71,12 +69,12 @@ const char *AForm::Exception::what() const throw()
 
 const char *AForm::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade Too High");
+	return ("Form : Grade Too High");
 }
 
 const char *AForm::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade Too Low");
+	return ("Form : Grade Too Low");
 }
 
 const char *AForm::UnsignedFormException::what(void) const throw()
