@@ -45,6 +45,11 @@ class AForm
 			public:
 				virtual const char *what() const throw();
 		};
+		class FormNotFoundException : public AForm::Exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 
 	private:
 		const std::string _name;

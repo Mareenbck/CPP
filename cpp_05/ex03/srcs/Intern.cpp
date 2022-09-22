@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:32:17 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/20 12:31:36 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/22 09:49:32 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,19 @@ Intern &Intern::operator=(Intern const &rhs)
 
 AForm *Intern::makeForm(std::string formName, std::string formTarget)
 {
-	std::string formTab[3] = {"shrubbery request", "robotomy request", "presidential request"};
+	std::string formTab[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	AForm *(Intern::*f[3])(std::string) = {&Intern::newShrubbery, &Intern::newRobotomy, &Intern::newPresidential };
 
-	int i = 0;
-	while (formName.compare(formTab[i]))
-		i++;
-	return (this->*f[i])(formTarget);
+	for (int i = 0; i < 3; i++)
+	{
+		if (!formName.compare(formTab[i]))
+		{
+			std::cout << "Intern creates " << formName << std::endl;
+			return (this->*f[i])(formTarget);
+		}
+	}
+	throw AForm::FormNotFoundException();
+	return NULL;
 }
 
 AForm	*Intern::newShrubbery(std::string target) {

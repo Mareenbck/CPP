@@ -82,6 +82,11 @@ const char *AForm::UnsignedFormException::what(void) const throw()
 	return ("Form is not signed");
 }
 
+const char *AForm::FormNotFoundException::what(void) const throw()
+{
+	return ("\033[0;31mForm not found\033[0m");
+}
+
 std::ostream &operator<<(std::ostream &o, AForm const &rhs)
 {
 	o << "Form : " << rhs.getName() << " - Signed ? ";

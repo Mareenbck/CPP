@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:30:31 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 15:37:10 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:16:27 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void badGradeTests(void)
 	std::cout << "\033[0;32m*Grade -10*\033[0m" << std::endl;
 	try
 	{
-		Bureaucrat Dieu("Fanny", -10);
+		Bureaucrat Fanny("Fanny", -10);
 	}
 	catch (const Bureaucrat::Exception &e)
 	{
