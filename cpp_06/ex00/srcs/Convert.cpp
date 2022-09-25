@@ -18,17 +18,22 @@ Convert::Convert(void)
 	return;
 }
 
-Convert::Convert(std::string input) : _input(input)
+Convert::Convert(std::string input) : _input(input), _isImpossible(false)
 {
-	this->_char = 0;
-	this->_int = 0;
-	this->_float = 0;
-	this->_double = 0;
+	try
+	{
+		this->_double = std::stod(_input);
+	}
+	catch(const std::exception& e)
+	{
+		this->_isImpossible = true;
+	}
+
 	std::cout << "Convert Constructor " << std::endl;
 	return;
 }
 
-Convert::Convert(Convert const &src) : __input(src.getInput())
+Convert::Convert(Convert const &src) : _input(src.getInput()), _isImpossible(false)
 {
 	*this = src;
 	std::cout << "Convert Copy Constructor " << std::endl;
@@ -43,6 +48,7 @@ Convert::~Convert(void)
 Convert &Convert::operator=(Convert const &rhs)
 {
 	this->_input = rhs.getInput();
+	this->_double = rhs._double;
 	return *this;
 }
 
@@ -51,50 +57,53 @@ std::string Convert::getInput(void) const
 	return this->_input;
 }
 
-bool Convert::isChar(void)
+void Convert::toChar()
 {
-	if (this->_input.length() < 2)
-	{
-		if (this->_input[0] >= 48 && this->_input[0] <= 57)
-			return false;
-		return true;
-	}
-	return false;
+	std::cout << "char: ";
+	if (_isImpossible || isnan(this->_double))
+		std::cout << "impossible";
+	else if (isprint(this->_double) == false)
+		std::cout << "Non displayable";
+	else
+		std::cout << static_cast<char>(this->_double);
+	std::cout << std::endl;
 }
 
-bool Convert::isInt(void)
+void Convert::toInt()
 {
-	int i = 0;
-
-	if (this->_input[i] == '-' || this->_input[i] == '+')
-		i++;
-	for (; i < this->_input.length(); i++)
-	{
-		if (!isdigit(this->_input[i]))
-			return false;
-	}
-	this->_toDouble = strtod(this->_input.c_str(), NULL);
-	return true;
+	std::cout << "int: ";
+	if (_isImpossible || isnan(this->_double) || this->_double > INT_MAX)
+		std::cout << "impossible" ;
+	else std::cout << static_cast<int>(this->_double);
+	std::cout << std::endl;
 }
 
-bool Convert::isFloat(void)
+void Convert::toFloat()
 {
-	int i = 0;
-	if (this->_input[i] == '-' || this->_input[i] == '+')
-		i++;
-	for (; i < this->_input.length(); i++)
-	{
-		if (!isdigit(this->_input[i]) && this->_input[i] == ".")
-		{
-			i++;
-			for (; i < this->_input.length(); i++)
-			{
-				if (!isdigit(this->_input[i]) && this->_input[i] != 'f')
-					return false;
-				else if (this->_input[i] == 'f' && this->_input[i + 1] != '\0')
-					return false;
-				else if (this->_input[i] == 'f' && this->_input[i + 1] == '\0')
-					return true;
-			}
-		}
+	std::cout << "float: ";
+	if (_isImpossible || isnan(this->_double) || this->_double > FLT_MAX)
+		std::cout << "nanf";
+	else
+		std::cout << static_cast<float>(this->_double) << 'f';
+	std::cout << std::endl;
+}
+
+void Convert::toDouble()
+{
+	std::cout << "double: ";
+	if (_isImpossible || isnan(this->_double))
+		std::cout << "nan";
+	else
+		std::cout << static_cast<double>(this->_double);
+	std::cout << std::endl;
+}
+
+const char *Convert::ImpossibleException::what() const throw()
+{
+	return ("impossible");
+}
+
+const char *Convert::NotDisplayableException::what() const throw()
+{
+	return ("Non displayable");
 }

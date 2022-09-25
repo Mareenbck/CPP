@@ -13,7 +13,11 @@
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 
-# include <iostream>
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <limits>
+#include <cfloat>
 
 class Convert
 {
@@ -25,19 +29,28 @@ class Convert
 
 		Convert &operator=(Convert const &rhs);
 
-		std::string Convert::getInput(void) const;
+		std::string getInput(void) const;
 
-		bool Convert::isChar(void);
-		bool Convert::isInt(void);
-		bool Convert::isFloat(void);
+		void toChar();
+		void toInt();
+		void toFloat();
+		void toDouble();
 
-	private:
+		class ImpossibleException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class NotDisplayableException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+	private :
 		std::string _input;
-		char		_char;
-		int			_int;
-		float		_float;
-		double		_double;
-		double		_toDouble;
+		double _double;
+		bool _isImpossible;
 
 };
 
