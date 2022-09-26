@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:26:27 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/22 17:48:15 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/26 13:55:02 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,29 @@
 
 Convert::Convert(void)
 {
-	std::cout << "Convert Default Constructor " << std::endl;
 	return;
 }
 
-Convert::Convert(std::string input) : _input(input), _isImpossible(false)
+Convert::Convert(std::string input) : _input(input)
 {
-	try
-	{
-		this->_double = std::stod(_input);
-	}
-	catch(const std::exception& e)
-	{
-		this->_isImpossible = true;
-	}
 
-	std::cout << "Convert Constructor " << std::endl;
+	this->_double = std::strtod(this->_input.c_str(), NULL);
+	if (isChar())
+	{
+		this->_int = static_cast<int>(this->_input[0]);
+		this->_float = static_cast<float>(this->_input[0]);
+		this->_double = static_cast<double>(this->_input[0]);
+	}
 	return;
 }
 
-Convert::Convert(Convert const &src) : _input(src.getInput()), _isImpossible(false)
+Convert::Convert(Convert const &src) : _input(src.getInput())
 {
 	*this = src;
-	std::cout << "Convert Copy Constructor " << std::endl;
 }
 
 Convert::~Convert(void)
 {
-	std::cout << "Convert Destructor " << std::endl;
 	return;
 }
 
@@ -57,31 +52,45 @@ std::string Convert::getInput(void) const
 	return this->_input;
 }
 
+bool	Convert::isChar() {
+
+	if (this->_input.length() < 2)
+	{
+		if ((this->_input[0] >= '0' && this->_input[0] <= '9'))
+			return false;
+		return true;
+	}
+	return false;
+}
+
 void Convert::toChar()
 {
 	std::cout << "char: ";
-	if (_isImpossible || isnan(this->_double))
+	if (isnan(this->_double) || this->_double >= INT_MAX || this->_double <= INT_MIN || this->_double < 0)
 		std::cout << "impossible";
-	else if (isprint(this->_double) == false)
+	else if (!isprint(this->_input[0]) || (!isChar() && this->_input.length() < 2))
 		std::cout << "Non displayable";
+	else if (isChar())
+		std::cout << "'" <<  this->_input[0] << "'";
 	else
-		std::cout << static_cast<char>(this->_double);
+		std::cout << "'" <<  static_cast<char>(this->_double) << "'";
 	std::cout << std::endl;
 }
 
 void Convert::toInt()
 {
 	std::cout << "int: ";
-	if (_isImpossible || isnan(this->_double) || this->_double > INT_MAX)
+	if (isnan(this->_double) || this->_double > INT_MAX || this->_double < INT_MIN)
 		std::cout << "impossible" ;
-	else std::cout << static_cast<int>(this->_double);
+	else
+		std::cout << static_cast<int>(this->_double);
 	std::cout << std::endl;
 }
 
 void Convert::toFloat()
 {
 	std::cout << "float: ";
-	if (_isImpossible || isnan(this->_double) || this->_double > FLT_MAX)
+	if (isnan(this->_double) || this->_double > FLT_MAX || this->_double < INT_MIN)
 		std::cout << "nanf";
 	else
 		std::cout << static_cast<float>(this->_double) << 'f';
@@ -91,19 +100,9 @@ void Convert::toFloat()
 void Convert::toDouble()
 {
 	std::cout << "double: ";
-	if (_isImpossible || isnan(this->_double))
+	if (isnan(this->_double))
 		std::cout << "nan";
 	else
 		std::cout << static_cast<double>(this->_double);
 	std::cout << std::endl;
-}
-
-const char *Convert::ImpossibleException::what() const throw()
-{
-	return ("impossible");
-}
-
-const char *Convert::NotDisplayableException::what() const throw()
-{
-	return ("Non displayable");
 }

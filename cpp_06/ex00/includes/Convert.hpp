@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 10:56:42 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/22 17:09:27 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/26 13:43:47 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <limits>
+#include <climits>
+#include <cctype>
+#include <cstdlib>
 #include <cfloat>
 
 class Convert
@@ -35,22 +37,13 @@ class Convert
 		void toInt();
 		void toFloat();
 		void toDouble();
-
-		class ImpossibleException : public std::exception
-		{
-			public:
-				const char *what() const throw();
-		};
-		class NotDisplayableException : public std::exception
-		{
-			public:
-				const char *what() const throw();
-		};
+		bool isChar();
 
 	private :
 		std::string _input;
-		double _double;
-		bool _isImpossible;
+		double 		_double;
+		int 		_int;
+		float 		_float;
 
 };
 
