@@ -1,5 +1,5 @@
 NAME	=	Array
-SRCS	=	Array.tpp main.cpp
+SRCS	=	main.cpp
 OBJS	=	$(addprefix $(OBJDIR), ${SRCS:.cpp=.o})
 DEPENDS = 	$(OBJS:.o=.d)
 CXX		=	c++
