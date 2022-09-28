@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:30:55 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/27 14:35:33 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:09:03 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,21 @@
 
 # include <iostream>
 # include <string>
-#include <stddef.h>
+# include <stddef.h>
 
-template<typename T>
-void print(T const &element)
-{
-	std::cout << element << " ";
-}
-
-template<typename T>
-T multi(T &number)
-{
-	number *= 10;
-	return number;
-}
-
-template<typename T>
-T upper(T &character)
-{
-	if (character >= 'a' && character <= 'z')
-		character -= 32;
-	return character;
-}
 
 template<typename T, typename U>
 void iter(T tab[], int size, U function)
 {
 	for (int i = 0; i < size; i++)
 		function(tab[i]);
+}
+
+template<typename T>
+void iter(T tab[], int size, void (*fct)(const T &))
+{
+	for (int i = 0; i < size; i++)
+		fct(tab[i]);
 }
 
 #endif
