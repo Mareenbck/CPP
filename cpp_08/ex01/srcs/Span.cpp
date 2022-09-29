@@ -46,7 +46,18 @@ void Span::addNumber(unsigned int i)
 
 Span &Span::longestSpan(void)
 {
+	//si span 0 ou 1 element throw lexception
 	//chercher l'element max avec formule max et iterator
 	//chercher lelement min
 	//return max - min
+}
+
+Span &Span::shortestSpan(void)
+{
+	// si span 0 ou 1 element throw lexception
+	//conserver la valeur de max
+	//trier le vector
+	//dans une boucle faire la difference entre n et n-1
+	//si la diff est plus petite que max , max devient cette nouvelle valeur
+	//return max
 }
