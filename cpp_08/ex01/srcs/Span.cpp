@@ -61,3 +61,13 @@ Span &Span::shortestSpan(void)
 	//si la diff est plus petite que max , max devient cette nouvelle valeur
 	//return max
 }
+
+const char *Span::EmptySpanException::what(void) const throw()
+{
+	return ("Span is empty");
+}
+
+const char *Span::FullSpanException::what(void) const throw()
+{
+	return ("Span is full");
+}
