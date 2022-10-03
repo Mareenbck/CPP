@@ -7,6 +7,7 @@ Span::Span(void) : _N(0)
 
 Span::Span(unsigned int n) : _N(n)
 {
+	this->_vect.reserve(n);
 	return;
 }
 
@@ -25,6 +26,7 @@ Span &Span::operator=(Span const &rhs)
 {
 	this->_vect = rhs.getVect();
 	this->_N = rhs.getSize();
+	return *this;
 }
 
 unsigned int Span::getSize(void) const
@@ -39,35 +41,60 @@ std::vector<int> Span::getVect(void) const
 
 void Span::addNumber(unsigned int i)
 {
-	//if length de vect est inferieur a N
-	// alors pushback dans _vect
-	// else throw lexception full
+	if (this->_vect.size() < this->_N)
+		this->_vect.push_back(i);
+	else
+		throw FullSpanException();
 }
 
-Span &Span::longestSpan(void)
+void Span::addNumber(const std::vector<int>::iterator &first, const std::vector<int>::iterator &last)
 {
-	//si span 0 ou 1 element throw lexception
-	//chercher l'element max avec formule max et iterator
-	//chercher lelement min
-	//return max - min
+	std::vector<int>::iterator end = _vect.end();
+	if (this->_vect.size() >= this->_N)
+		throw FullSpanException();
+	else
+		this->_vect.insert(end, first, last);
 }
 
-Span &Span::shortestSpan(void)
+
+int Span::longestSpan(void)
 {
-	// si span 0 ou 1 element throw lexception
-	//conserver la valeur de max
-	//trier le vector
-	//dans une boucle faire la difference entre n et n-1
-	//si la diff est plus petite que max , max devient cette nouvelle valeur
-	//return max
+	if (this->_vect.size() < 2)
+		throw EmptySpanException();
+	int max = *std::max_element(_vect.begin(), _vect.end());
+	int min = *std::min_element(_vect.begin(), _vect.end());
+	return (max - min);
+}
+
+int Span::shortestSpan(void)
+{
+	if (this->_vect.size() < 2)
+		throw EmptySpanException();
+	int max = longestSpan();
+	sort(_vect.begin(), _vect.end());
+	for (unsigned long int i = 1; i < _vect.size(); i++)
+	{
+		if (_vect[i] - _vect[i - 1] < max)
+			max = _vect[i] - _vect[i - 1];
+	}
+	return (max);
 }
 
 const char *Span::EmptySpanException::what(void) const throw()
 {
-	return ("Span is empty");
+	return ("\033[0;31mSpan is empty\033[0m");
 }
 
 const char *Span::FullSpanException::what(void) const throw()
 {
-	return ("Span is full");
+	return ("\033[0;31mSpan is full\033[0m");
+}
+
+std::ostream &operator<<(std::ostream &o, Span const &rhs)
+{
+	std::vector<int> v = rhs.getVect();
+	for (unsigned long int i = 0; i < v.size(); i++)
+		o << v[i] << ", ";
+	std::cout << std::endl;
+	return o;
 }

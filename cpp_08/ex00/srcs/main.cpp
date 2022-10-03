@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/03 13:04:44 by mbascuna          #+#    #+#             */
+/*   Updated: 2022/10/03 14:05:01 by mbascuna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -76,5 +88,4 @@ int main(void)
 	// 	std::cerr << e.what() << '\n';
 	// }
 	return 0;
-	//faire avec vector, tableau de int , list
 }
