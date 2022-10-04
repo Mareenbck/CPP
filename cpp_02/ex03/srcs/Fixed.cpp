@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:57:42 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/06 10:57:42 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/06 15:19:39 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (float)this->_n / (float)(1 << this->_bits);
+	return (float)this->_n / (1 << this->_bits);
 }
 
 int Fixed::toInt(void) const

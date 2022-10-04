@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:57:39 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/06 10:57:40 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/06 15:21:02 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 Fixed calcul_w1(Point const a, Point const b, Point const c, Point const point)
 {
 	// w1 = (Ax * (Cy - Ay)) + (Py - Ay) * (Cx - Ax) - Px * (Cy - Ay))
-	//		   ---------------------------------------------------------
-	//				    (By - Ay) * (Cx - Ax) - (Bx - Ax) * (Cy - Ay)
+	//		 ---------------------------------------------------------
+	//			    (By - Ay) * (Cx - Ax) - (Bx - Ax) * (Cy - Ay)
 	Fixed w1;
 	Fixed num;
 	Fixed denum;
@@ -32,8 +32,8 @@ Fixed calcul_w1(Point const a, Point const b, Point const c, Point const point)
 Fixed calcul_w2(Point const a, Point const b, Point const c, Point const point)
 {
 	// w2 = Py - Ay - w1 * (By - Ay)
-	//		   ---------------------
-	//	      			Cy - Ay
+	//		 ---------------------
+	//	     		Cy - Ay
 	Fixed w2;
 	Fixed w1 = calcul_w1(a, b, c, point);
 	Fixed num;
@@ -54,9 +54,9 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	w1 = calcul_w1(a, b, c, point);
 	w2 = calcul_w2(a, b, c, point);
 
-	if (w1 > 0 && w2 > 0 && (w1 + w2) < 1)
-		return true;
-	else
-		return false;
-	// return ((w1 > 0 && w2 > 0 && (w1 + w2) < 1))
+	// if (w1 > 0 && w2 > 0 && (w1 + w2) < 1)
+	// 	return true;
+	// else
+	// 	return false;
+	return ((w1 > 0 && w2 > 0 && (w1 + w2) < 1));
 }
