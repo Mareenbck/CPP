@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:07:02 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/19 11:24:33 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:54:07 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
+	// setAttackDamage(30);
 	return;
 }
 

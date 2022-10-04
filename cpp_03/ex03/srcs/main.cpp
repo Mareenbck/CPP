@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 14:03:22 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/15 16:52:14 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:35:50 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,18 @@ int main(void)
 	std::cout << "Hits points " << d.get_hitPoints() << std::endl;
 	std::cout << "Attack Damage " << d.get_attackDamage() << std::endl;
 	std::cout << "Energy points " << d.get_energyPoints() << std::endl;
+
+	std::cout << std::endl;
+	FragTrap e("FRAG");
+	std::cout << "Hits points " << e.get_hitPoints() << std::endl;
+	std::cout << "Attack Damage " << e.get_attackDamage() << std::endl;
+	std::cout << "Energy points " << e.get_energyPoints() << std::endl;
+
+	std::cout << std::endl;
+	ScavTrap f("SCAV");
+	std::cout << "Hits points " << f.get_hitPoints() << std::endl;
+	std::cout << "Attack Damage " << f.get_attackDamage() << std::endl;
+	std::cout << "Energy points " << f.get_energyPoints() << std::endl;
 
 	std::cout << std::endl;
 	a.whoAmI();
