@@ -3,7 +3,7 @@
 Animal::Animal(void)
 {
 	this->type = "Animal";
-	std::cout << "Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
+	std::cout << "Animal Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 
 	return;
 }
@@ -11,12 +11,12 @@ Animal::Animal(void)
 Animal::Animal(Animal const &src)
 {
 	*this = src;
-	std::cout << "Copy Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
+	std::cout << "Animal Copy Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Destructor : \033[0;35mAnimal\033[0m" << std::endl;
+	std::cout << "Animal Destructor : \033[0;35mAnimal\033[0m" << std::endl;
 	return;
 }
 

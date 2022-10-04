@@ -47,7 +47,7 @@ int main()
 		const Animal *i = new Cat();
 		std::cout << "Type : " << j->getType() << " " << std::endl;
 		std::cout << "Type : " << i->getType() << " " << std::endl;
-		i->makeSound(); // will output the cat sound!
+		i->makeSound();
 		j->makeSound();
 		meta->makeSound();
 		std::cout << "\033[1m.DELETE.\033[0m" << std::endl;
@@ -65,7 +65,7 @@ int main()
 		const WrongAnimal *i = new WrongCat();
 		std::cout << "Type : " << meta->getType() << " " << std::endl;
 		std::cout << "Type : " << i->getType() << " " << std::endl;
-		i->makeSound(); // will output the cat sound!
+		i->makeSound();
 		meta->makeSound();
 		std::cout << "\033[1m.DELETE.\033[0m" << std::endl;
 		std::cout << "meta" << std::endl;

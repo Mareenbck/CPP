@@ -4,23 +4,21 @@
 Cat::Cat(void) : Animal()
 {
 	this->type = "Cat";
-	std::cout << "Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 	this->_brain = new Brain();
+	std::cout << "Cat Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 	return;
 }
 
 Cat::Cat(Cat const &src) : Animal()
 {
-	std::cout << "Copy constructor :\033[0;34m (" << src.type << ")\033[0m" << std::endl;
-	this->_brain = new Brain();
+	this->_brain = NULL;
 	*this = src;
-	// METTRE BRAIN DANS CONSTRUCTEUR PAR COPIE
-
+	std::cout << "Cat Copy constructor :\033[0;34m (" << src.type << ")\033[0m" << std::endl;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Destructor :\033[0;35m " << this->type << "\033[0m" << std::endl;
+	std::cout << "Cat Destructor :\033[0;35m " << this->type << "\033[0m" << std::endl;
 	delete this->_brain;
 	return;
 }
@@ -28,8 +26,9 @@ Cat::~Cat(void)
 Cat &Cat::operator=(Cat const &rhs)
 {
 	this->type = rhs.getType();
-	*this->_brain = *rhs.getBrain();
-
+	if (this->_brain)
+		delete (this->_brain);
+	this->_brain = new Brain();
 	return *this;
 }
 

@@ -3,7 +3,7 @@
 AAnimal::AAnimal(void)
 {
 	this->type = "AAnimal";
-	std::cout << "Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
+	std::cout << "Animal Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 
 	return;
 }
@@ -11,12 +11,12 @@ AAnimal::AAnimal(void)
 AAnimal::AAnimal(AAnimal const &src)
 {
 	*this = src;
-	std::cout << "Copy Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
+	std::cout << "Animal Copy Constructor :\033[0;34m " << this->type << "\033[0m" << std::endl;
 }
 
 AAnimal::~AAnimal(void)
 {
-	std::cout << "Destructor : \033[0;35mAAnimal\033[0m" << std::endl;
+	std::cout << "Animal Destructor : \033[0;35mAAnimal\033[0m" << std::endl;
 	return;
 }
 
