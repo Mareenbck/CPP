@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:27:28 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/20 10:49:45 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/10/04 13:38:54 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw AForm::UnsignedFormException();
 	else if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
-	std::cout << "🔩 BzzZBzZZZzzBzzzz 🔩" << std::endl;
+	std::cout << "🔩 BzzZBzZZZzzzBzzzz 🔩" << std::endl;
 	std::srand(time(0));
 	int i = std::rand()%100;
 	if (i % 2)
