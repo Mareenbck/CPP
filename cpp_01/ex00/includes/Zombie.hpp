@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 12:08:06 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/09 13:12:23 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/05 12:09:42 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Zombie
 		std::string _name;
 
 	public:
-		Zombie(std::string _name);
-		// Zombie(void);
+		Zombie(std::string name);
 		~Zombie(void);
 
 		void announce(void);

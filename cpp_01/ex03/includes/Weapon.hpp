@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:46:50 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/08/02 18:07:42 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/05 12:53:13 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Weapon
 		~Weapon(void);
 
 		std::string const & getType() const;
-		void setType(std::string _type);
+		void setType(std::string type);
 };
 
 #endif

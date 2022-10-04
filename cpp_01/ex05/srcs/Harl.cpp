@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 13:09:32 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/06 14:15:23 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/08/03 14:42:16 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ void Harl::complain(std::string level)
 
 	while (level.compare(msg[i]))
 		i++;
-	(this->*f[i])();
+	(this->*f[i++])();
 }
