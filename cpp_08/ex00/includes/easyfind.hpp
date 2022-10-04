@@ -10,7 +10,7 @@ class NotFindException : public std::exception
 {
 	public:
 		virtual const char *what(void) const throw(){
-			return ("is not in range");
+			return ("\033[0;31mCannot Find\033[0m");
 		}
 };
 

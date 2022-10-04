@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:39:10 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/10/03 16:08:02 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/10/04 13:12:49 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,12 @@ void fullSpan(void)
 			span.addNumber(num);
 		i = span.getVect().size();
 	}
+	std::vector<int> v2 = span.getVect();
 	std::cout << "\033[0;34mSpan size : \033[0m" << span.getVect().size() << std::endl;
 	std::cout << "\033[0;33;2mShortest span : \033[0m" << span.shortestSpan() << std::endl;
 	std::cout << "\033[0;33;2mLongest span  : \033[0m" << span.longestSpan() << std::endl;
+	std::cout << "min : " << *std::min_element(v2.begin(), v2.end()) << std::endl;
+	std::cout << "max : " << *std::max_element(span.getVect().begin(), span.getVect().end()) << std::endl;
 	try
 	{
 		span.addNumber(65);
