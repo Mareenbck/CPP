@@ -6,7 +6,7 @@
 /*   By: mbascuna <mbascuna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:25:34 by mbascuna          #+#    #+#             */
-/*   Updated: 2022/09/27 13:52:21 by mbascuna         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:48:05 by mbascuna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main( void )
 	std::cout << std::endl;
 	std::cout << "Initial : a = " << a << ", b = " << b << std::endl;
 	::swap( a, b );
-	std::cout << "After swap : a = " << a << ", b = " << b << std::endl;
-	std::cout << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "After swap : a = " << a << ", b = " << b << std::endl;
+	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "******************************************" << std::endl;
 	std::cout << std::endl;
